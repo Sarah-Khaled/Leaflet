@@ -1,0 +1,25 @@
+---
+title: "Leaflet project"
+author: "Sarah khaled"
+date: "July 10, 2019"
+output:
+  html_document:
+    keep_md: true
+---
+# Create a web page using R Markdown that features a university of calgary map created with Leaflet.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(leaflet)
+# University_of_Calgary URL
+University_of_Calgary <- c("<a href= 'https://www.ucalgary.ca/' >University of
+                           Calgary</a>")
+#creat the map
+my_map<-leaflet() %>% addTiles()
+# add marker on the map that refers to University of Calgary
+my_map<-addMarkers(my_map,lat = 51.073166374 ,lng = -114.126499494 , popup = University_of_Calgary)
+my_map
+
+```
